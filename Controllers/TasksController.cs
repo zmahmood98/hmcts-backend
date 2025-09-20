@@ -41,6 +41,20 @@ namespace HmctsBackend.Controllers
             return task;
         }
 
+        // Retrieve a task by Status
+        [HttpGet("status/{status}")]
+        public async Task<ActionResult<IEnumerable<TaskItem>>> GetTasksByStatus(string status)
+        {
+            var tasks = await _context.Tasks
+                                    .Where(t => t.Status == status)
+                                    .ToListAsync();
+
+            if (tasks == null || tasks.Count == 0)
+                return NotFound();
+
+            return tasks;
+        }
+
         // Update the status of a task
         [HttpPut("{id}/status")]
         public async Task<IActionResult> UpdateStatus(int id, [FromBody] string status)
