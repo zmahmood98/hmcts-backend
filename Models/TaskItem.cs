@@ -6,6 +6,6 @@ namespace HmctsBackend.Models
         public required string Title { get; set; }
         public string? Description { get; set; }
         public string Status { get; set; } = "To do";
-        public DateTime DueDate { get; set; }
+        public required DateTime DueDate { get; set; }
     }
 }
