@@ -15,6 +15,7 @@ It provides a RESTful API for managing tasks (create, read, update, delete) and 
 ## Prerequisites
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
 - [Docker](https://www.docker.com/)
+- If you do not have it already, install EF Core CLI tools using `dotnet tool install --global dotnet-ef`
 
 ## Database Setup
 Run PostgreSQL in Docker:
@@ -26,7 +27,8 @@ docker run --name hmcts-postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=
 ## Usage
 1. Clone the repo `git clone git@github.com:zmahmood98/hmcts-backend.git`
 2. Enter the directory `cd hmcts-backend`
-3. To start the server in development mode, run `dotnet build` and then `dotnet run` 
+3. Run `dotnet ef database update` to apply database migrations
+4. To start the server in development mode, run `dotnet build` and then `dotnet run` 
 
 ---
 
