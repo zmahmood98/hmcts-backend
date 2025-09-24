@@ -63,6 +63,12 @@ In the root directory run `dotnet test` to start the test suite.
 
 ---
 
+## 🛣 Roadmap
+- [ ] Refactor code to use a .env file for sensitive data like passwords 
+- [ ] Deploy API and database, along with frontend
+- [ ] Add authentication, user, and login routes
+
+---
+
 ## 📌 Notes
-- Make sure Docker is running before starting the app.  
-- Database connection details can be customized in your environment variables.  
+- Make sure Docker is running before starting the app.
