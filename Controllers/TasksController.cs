@@ -26,6 +26,9 @@ namespace HmctsBackend.Controllers
                 if (!validStatuses.Contains(task.Status))
                     return BadRequest(new { Message = $"Invalid status. Allowed values: {string.Join(", ", validStatuses)}" });
 
+                if (task.DueDate <= DateTime.UtcNow)
+                    return BadRequest(new { Message = $"Invalid due date. Tasks must be scheduled for a future date." });
+
                 _context.Tasks.Add(task);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction(nameof(GetTaskById), new { id = task.Id }, task);
