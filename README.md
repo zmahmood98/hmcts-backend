@@ -52,9 +52,7 @@ http://localhost:5025/api
 ---
 
 ## 🧪 Running Tests
-```bash
-dotnet test
-```
+In the root directory run `dotnet test` to start the test suite.
 
 ---
 
