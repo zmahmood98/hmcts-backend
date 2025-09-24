@@ -205,6 +205,24 @@ namespace HmctsBackend.Tests
             // Assert
             Assert.That(result.Result, Is.TypeOf<BadRequestObjectResult>());
         }
+        
+        [Test]
+        public async Task CreateTask_WhenInvalidDueDate_ShouldReturnBadRequest()
+        {
+            // Arrange
+            var newTask = new TaskItem
+            {
+                Title = "New Task",
+                Status = "Doing",
+                DueDate = DateTime.Now.AddDays(-7)
+            };
+
+            // Act
+            var result = await _controller.CreateTask(newTask);
+
+            // Assert
+            Assert.That(result.Result, Is.TypeOf<BadRequestObjectResult>());
+        }
 
         [Test]
         [TestCase("To do")]
