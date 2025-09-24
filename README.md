@@ -67,6 +67,7 @@ In the root directory run `dotnet test` to start the test suite.
 - [ ] Refactor code to use a .env file for sensitive data like passwords 
 - [ ] Deploy API and database, along with frontend
 - [ ] Add authentication, user, and login routes
+- [ ] Add route to update the Due Date of tasks
 
 ---
 
